@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body style="font-family: Arial; text-align:center; padding:40px; background:#f7f9fc;">
+
+<h1>User Registration</h1>
+
+<form id="userForm" action="/submit" method="POST"
+      style="display:inline-block; background:white; padding:25px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+
+  <label>Name:</label><br>
+  <input type="text" name="name" id="name" required style="padding:8px; margin:5px;"><br>
+
+  <label>Email:</label><br>
+  <input type="email" name="email" id="email" required style="padding:8px; margin:5px;"><br>
+
+  <label>Age:</label><br>
+  <input type="number" name="age" id="age" required style="padding:8px; margin:5px;"><br>
+
+  <button type="submit" style="background:#007bff; color:white; border:none; padding:10px 20px; border-radius:5px;">
+    Submit
+  </button>
+</form>
+
+<script>
+  document.getElementById('userForm').addEventListener('submit', function(e) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const age = parseInt(document.getElementById('age').value);
+
+    if (name.length < 3) { alert('Name must be at least 3 characters.'); e.preventDefault(); return; }
+    if (!email.includes('@')) { alert('Enter a valid email.'); e.preventDefault(); return; }
+    if (isNaN(age) || age < 10 || age > 100) { alert('Age must be 10-100.'); e.preventDefault(); return; }
+  });
+</script>
+
+</body>
+</html>
