@@ -1,0 +1,21 @@
+body {
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  font-family: 'Poppins', sans-serif;
+}
+
+form {
+  background: #fff;
+  border-radius: 15px;
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.list-group-item:hover {
+  transform: scale(1.02);
+}
